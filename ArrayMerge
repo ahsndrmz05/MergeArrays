@@ -1,0 +1,35 @@
+public class ArrayMerge {
+	// Created a insertArray method
+	public static void insertArray(int[] first,int[] second, int i) {
+		int n = (i+ second.length);
+		int m= first.length+ second.length;
+		//creating new array for merge
+		int[] newArray= new int[m];
+		//Adding elements till index i
+		for(int a=0;a<i;a++) {
+			newArray[a]= first[a];	
+		}
+		//initializing the index for second array
+		int k=i;
+		//adding elements from second array
+		for(int j=0;j<second.length;j++) {
+			newArray[k]= second[j];
+			k++;
+		}
+		//adding remaining elements of first  array
+		for(int b=n;b<m;b++) {
+			newArray[b]= first[i];
+			i++;
+			}
+		//Printing all elements of merged array
+		for(int c:newArray) {System.out.print(c+" ");}
+	}
+
+	public static void main(String[] args) {
+		//example
+		int [] first= {1,3,5,7,9,11};
+		int [] second={2,4,6};
+		insertArray(first,second,3);
+
+	}
+}
